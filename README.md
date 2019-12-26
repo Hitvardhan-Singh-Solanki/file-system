@@ -33,5 +33,6 @@ Instructions:
 
 ### Install Build(prod mode)
 
-- run `npm run build`
-- run `serve build`
+- `npm run build`
+- `npm install -g serve`
+- `serve -s build`
