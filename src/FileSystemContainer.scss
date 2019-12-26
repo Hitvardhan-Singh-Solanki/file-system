@@ -1,0 +1,33 @@
+@import './colors.scss';
+
+.container {
+  display: flex;
+}
+
+.folderTree {
+  flex: 1;
+  background-color: $off-white;
+  color: $gray;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.explorer {
+  flex: 4;
+}
+
+.custom-padding-20 {
+  padding: 20px;
+}
+
+.sub-structure {
+  color: $black;
+  justify-content: space-between;
+  & > p {
+    text-transform: capitalize;
+  }
+}
+
+.selected {
+  background-color: $light-gray;
+}

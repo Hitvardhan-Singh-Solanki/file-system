@@ -1,0 +1,54 @@
+@import './../../colors.scss';
+
+.accordion__section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.accordion {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 20px 0 20px 20px;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.6s ease;
+}
+
+.accordion__title {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  display: none;
+}
+
+.accordion__text {
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 16px;
+  padding: 0 0 0 10px;
+  border-left: 2px solid $light-gray;
+  color: $dark-gray;
+  margin-left: 20px;
+  & > div {
+    padding-bottom: 20px;
+  }
+}
+
+.accordion__content.active {
+  display: block;
+}

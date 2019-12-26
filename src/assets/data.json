@@ -1,0 +1,165 @@
+{
+  "id": "841e3303-1dea-468d-85a0-efbd26595607",
+  "type": "folder",
+  "name": "root",
+  "path": "/",
+  "size": "100kb",
+  "date": "2019-12-22",
+  "author": "admin",
+  "parentPath": null,
+  "parentID": null,
+  "children": [
+    {
+      "id": "841e3303-1dea-468d-85a0-efbd26595608",
+      "type": "folder",
+      "name": "apps",
+      "author": "Hitvardhan",
+      "size": "100kb",
+      "date": "2019-12-22",
+      "parentID": "841e3303-1dea-468d-85a0-efbd26595607",
+      "parentPath": "/",
+      "path": "/apps",
+      "children": []
+    },
+    {
+      "id": "841e3303-1dea-468d-85a0-efbd26595609",
+      "type": "folder",
+      "name": "pictures",
+      "author": "Hitvardhan",
+      "size": "100kb",
+      "date": "2019-12-22",
+      "parentID": "841e3303-1dea-468d-85a0-efbd26595607",
+      "parentPath": "/",
+      "path": "/pictures",
+      "children": []
+    },
+    {
+      "id": "841e3303-1dea-468d-85a0-efbd26595610",
+      "type": "folder",
+      "name": "videos",
+      "author": "Hitvardhan",
+      "size": "100kb",
+      "date": "2019-12-22",
+      "parentID": "841e3303-1dea-468d-85a0-efbd26595607",
+      "parentPath": "/",
+      "path": "/videos",
+      "children": []
+    },
+    {
+      "id": "841e3303-1dea-468d-85a0-efbd26595611",
+      "type": "folder",
+      "name": "docs",
+      "author": "Hitvardhan",
+      "size": "100kb",
+      "date": "2019-12-22",
+      "parentID": "841e3303-1dea-468d-85a0-efbd26595607",
+      "parentPath": "/",
+      "path": "/docs",
+      "children": [
+        {
+          "id": "841e3303-1dea-468d-85a0-efbd26595614",
+          "type": "folder",
+          "name": "work",
+          "author": "Hitvardhan",
+          "size": "100kb",
+          "date": "2019-12-22",
+          "parentID": "841e3303-1dea-468d-85a0-efbd26595611",
+          "parentPath": "/docs",
+          "path": "/docs/work",
+          "children": [
+            {
+              "id": "841e3303-1dea-468d-85a0-efbd26595619",
+              "type": "folder",
+              "name": "test",
+              "author": "Hitvardhan",
+              "size": "100kb",
+              "date": "2019-12-22",
+              "parentID": "841e3303-1dea-468d-85a0-efbd26595614",
+              "parentPath": "/docs/work",
+              "path": "/docs/work/test",
+              "children": [
+                {
+                  "id": "841e3303-1dea-468d-85a0-efbd26595629",
+                  "type": "folder",
+                  "name": "test12",
+                  "author": "Hitvardhan",
+                  "size": "100kb",
+                  "date": "2019-12-22",
+                  "parentID": "841e3303-1dea-468d-85a0-efbd26595619",
+                  "parentPath": "/docs/work",
+                  "path": "/docs/work/test/test12"
+                }
+              ]
+            },
+            {
+              "id": "841e3303-1dea-468d-85a0-efbd26595617",
+              "type": "file",
+              "name": "e.pdf",
+              "author": "Hitvardhan",
+              "size": "100kb",
+              "date": "2019-12-22",
+              "parentID": "841e3303-1dea-468d-85a0-efbd26595614",
+              "parentPath": "/docs/work",
+              "path": "/docs/work/e.pdf"
+            },
+            {
+              "id": "841e3303-1dea-468d-85a0-efbd26595618",
+              "type": "file",
+              "name": "f.ts",
+              "author": "Hitvardhan",
+              "size": "100kb",
+              "date": "2019-12-22",
+              "parentID": "841e3303-1dea-468d-85a0-efbd26595614",
+              "parentPath": "/docs/work",
+              "path": "/docs/work/f.ts"
+            }
+          ]
+        },
+        {
+          "id": "841e3303-1dea-468d-85a0-efbd26595615",
+          "type": "file",
+          "name": "c.pdf",
+          "author": "Hitvardhan",
+          "size": "100kb",
+          "date": "2019-12-22",
+          "parentID": "841e3303-1dea-468d-85a0-efbd26595611",
+          "parentPath": "/docs",
+          "path": "/docs/c.pdf"
+        },
+        {
+          "id": "841e3303-1dea-468d-85a0-efbd26595616",
+          "type": "file",
+          "name": "d.docx",
+          "author": "Hitvardhan",
+          "size": "100kb",
+          "date": "2019-12-22",
+          "parentID": "841e3303-1dea-468d-85a0-efbd26595611",
+          "parentPath": "/docs",
+          "path": "/docs/d.docx"
+        }
+      ]
+    },
+    {
+      "id": "841e3303-1dea-468d-85a0-efbd26595612",
+      "type": "file",
+      "name": "a.pdf",
+      "author": "Hitvardhan",
+      "size": "100kb",
+      "date": "2019-12-22",
+      "parentID": "841e3303-1dea-468d-85a0-efbd26595607",
+      "parentPath": "/",
+      "path": "/a.pdf"
+    },
+    {
+      "id": "841e3303-1dea-468d-85a0-efbd26595613",
+      "type": "file",
+      "name": "b.jpg",
+      "author": "Hitvardhan",
+      "size": "100kb",
+      "date": "2019-12-22",
+      "parentID": "841e3303-1dea-468d-85a0-efbd26595607",
+      "parentPath": "/",
+      "path": "/b.jpg"
+    }
+  ]
+}

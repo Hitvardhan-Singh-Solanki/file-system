@@ -1,0 +1,29 @@
+@import '../../colors.scss';
+
+.file-info-image-container {
+  img {
+    margin: 20px 0;
+  }
+}
+
+.file-info-list {
+  width: 100%;
+
+  .file-info-element {
+    display: flex;
+    padding-top: 20px;
+    & > p {
+      flex: 1;
+      max-width: 50%;
+      color: $light-md-gray;
+    }
+    & > p:first-child {
+      color: $pale-black;
+      padding-right: 10px;
+      text-align: end;
+      &::after {
+        content: ':';
+      }
+    }
+  }
+}

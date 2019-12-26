@@ -1,0 +1,23 @@
+.switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dde0e4;
+  border-radius: 8px;
+  margin: 30px 0;
+  & > div {
+    text-align: center;
+    padding: 10px;
+    width: 100px;
+  }
+  & > .switch-container {
+    & > div:first-child {
+      border-right: 1px solid #dde0e4;
+    }
+  }
+  & > div.active {
+    background: #4ab7ff;
+    color: #fff;
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,35 @@
+@import './../../colors.scss';
+
+.create-new-file {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  padding: 20px;
+}
+
+.create-new-file-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: $pale-black;
+  letter-spacing: 0;
+}
+
+.close-modal-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.create-new-file-button {
+  background: $blue;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px 0;
+  padding: 20px;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0;
+}

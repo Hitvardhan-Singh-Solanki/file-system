@@ -1,0 +1,22 @@
+@import '../../colors.scss';
+
+.create-new-file-input-container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 20px 0;
+  .create-new-file-input {
+    width: 80%;
+    max-width: 300px;
+    padding: 20px;
+    background: $white;
+    border: 1px solid $pale-white;
+    border-radius: 8px;
+  }
+  p{
+    margin-top: 5px;
+    color: $light-red;
+    font-size: 14px;
+  }
+}

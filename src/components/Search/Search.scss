@@ -1,0 +1,31 @@
+@import './../../colors.scss';
+
+.search-comp {
+  position: absolute;
+  right: 50px;
+  top: 25px;
+  z-index: 95;
+  .search-results-container {
+    background-color: $white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 1);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 1);
+    box-shadow: 0px 4px 8px 0px rgba(170, 170, 170, 1);
+    li {
+      border-bottom: 1px solid $gray;
+      padding: 10px;
+      &:last-child {
+        border: 0;
+      }
+      .list-element {
+        color: $black;
+        padding-left: 5px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

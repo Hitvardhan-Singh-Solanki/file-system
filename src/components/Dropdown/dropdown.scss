@@ -1,0 +1,23 @@
+@import './../../colors.scss';
+
+.worker-opts {
+  background: $white;
+  border: 1px solid rgba(221, 224, 228, 0.5);
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  position: absolute;
+  top: 125px;
+  left: 55px;
+  width: 150px;
+  z-index: 1;
+  li {
+    padding: 20px;
+    &:hover {
+      background: $light-gray;
+      border: 1px solid $light-gray;
+    }
+    &:last-child {
+      color: $light-red;
+    }
+  }
+}
