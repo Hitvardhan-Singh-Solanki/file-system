@@ -2,10 +2,13 @@ import moment from 'moment';
 
 const constructFileName = (fileName, count) => {
   let [name, extension] = fileName.split('.');
-  name = isNaN(name[name.length - 1])
-    ? name + count
-    : name.slice(0, -1) + count;
-  return name + (extension ? `.${extension}` : '');
+  let currentCount = name[name.length - 1];
+  name = isNaN(currentCount) ? name + count : name.slice(0, -1) + count;
+
+  return {
+    fileName: name + (extension ? `.${extension}` : ''),
+    newCount: ++currentCount,
+  };
 };
 
 const constructFilePath = (fileName, filePath) =>
@@ -16,9 +19,18 @@ const fileExistRename = (file, siblings, count = 1) => {
     siblings.push(file);
     return siblings;
   } else {
-    file.name = constructFileName(file.name, count);
-    file.path = constructFilePath(file.name, file.path);
-    return fileExistRename(file, siblings, count++);
+    const { fileName, newCount } = constructFileName(file.name, count);
+    if (
+      window.confirm(
+        `The file name ${file.name} already exists you want to create ${fileName}?`
+      )
+    ) {
+      file.name = fileName;
+      file.path = constructFilePath(file.name, file.path);
+      return fileExistRename(file, siblings, newCount);
+    } else {
+      return siblings;
+    }
   }
 };
 
