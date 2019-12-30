@@ -26,6 +26,10 @@
 .accordion__icon {
   margin-left: auto;
   transition: transform 0.6s ease;
+  &:hover {
+    background-color: $pale-white;
+    border-radius: 50%;
+  }
 }
 
 .rotate {

@@ -8,7 +8,9 @@ const Accordion = props => {
 
   const content = useRef(null);
 
-  const toggleAccordion = () => {
+  const toggleAccordion = e => {
+    e.preventDefault();
+    e.stopPropagation();
     setActiveState(setActive === '' ? 'active' : '');
     setRotateState(
       setActive === 'active' ? 'accordion__icon' : 'accordion__icon rotate'
@@ -22,15 +24,15 @@ const Accordion = props => {
 
   return (
     <div className="accordion__section">
-      <button className={accordionBtnClassNames} onClick={toggleAccordion}>
+      <button className={accordionBtnClassNames}>
         <p className="accordion__title">{props.title}</p>
         {props.icon && (
           <img
+            onClick={toggleAccordion}
             src={props.icon}
             alt={props.title}
             className={`${setRotate}`}
             width={25}
-            fill={'#777'}
           />
         )}
       </button>
