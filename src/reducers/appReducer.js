@@ -18,9 +18,7 @@ export default (state = initState, action) => {
         folderStructure: action.folderStructure,
         currentPath: {
           ...state.currentPath,
-          children: state.currentPath.children
-            ? [...state.currentPath.children, action.newChild]
-            : [action.newChild],
+          children: action.siblings,
         },
       };
     case actions.DELETE:

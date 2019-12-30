@@ -38,6 +38,7 @@ export const findChildrenOnId = (idToFind, folderStructure) => {
 };
 
 export const pushNewChildToParent = (fileInformation, folderStructure) => {
+  // let children = [];
   if (folderStructure.id === fileInformation.parentID) {
     if (folderStructure.children)
       folderStructure.children.push(fileInformation);

@@ -12,6 +12,12 @@ const Folders = props => {
     props.history.push(ele.path, { id: ele.id });
   };
 
+  const allChildrenFolders = childrenArray => {
+    if (childrenArray.length > 0)
+      return childrenArray.some(ele => ele.type === FOLDER_TYPE);
+    return true;
+  };
+
   const renderSubmenus = sub => {
     return sub.map(ele => {
       if (ele.type === FOLDER_TYPE) {
@@ -19,7 +25,11 @@ const Folders = props => {
           <div onClick={e => navigateToFile(e, ele)} key={ele.id}>
             <Accordion
               title={ele.name}
-              icon={ele.children?.length ? dropdown : ''}
+              icon={
+                ele.children?.length && allChildrenFolders(ele.children || [])
+                  ? dropdown
+                  : ''
+              }
             >
               {renderSubmenus(ele.children || [])}
             </Accordion>

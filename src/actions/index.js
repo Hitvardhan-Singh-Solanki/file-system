@@ -31,10 +31,11 @@ export const modalContent = content => {
 export const createFile = fileInformation => {
   const currentFolder = store.getState().app.folderStructure;
   const entire = pushNewChildToParent(fileInformation, currentFolder);
+  const siblings = findChildrenOnId(fileInformation.parentID, entire);
   return {
     type: CREATE,
     folderStructure: entire,
-    newChild: fileInformation,
+    siblings,
   };
 };
 

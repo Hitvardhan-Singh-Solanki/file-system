@@ -9,21 +9,26 @@ import folderIcon from './../assets/icons/folder.png';
 import newFileIcon from './../assets/icons/newfile.png';
 import { FOLDER_TYPE } from '../utils/constant';
 
-const FilePit = props => {
-  const [files, setFiles] = useState(props.children);
+const FilePit = ({
+  isNoneSelected,
+  toggleModalLocal,
+  markSomeSelected,
+  currentPath,
+}) => {
+  const [files, setFiles] = useState([]);
   useEffect(() => {
-    const children = props.children?.map(child => {
+    const childrenLocal = currentPath.children?.map(child => {
       child.selected = false;
       child.extension = child.name.split('.')[1];
       child.icon = child.type === FOLDER_TYPE ? folderIcon : fileIcon;
       child.showPopUp = false;
       return child;
     });
-    setFiles(children);
-  }, [props.children]);
+    setFiles(childrenLocal || []);
+  }, [currentPath]);
 
   useEffect(() => {
-    if (props.isNoneSelected) {
+    if (isNoneSelected) {
       const filesNew = files?.map(file => {
         file.selected = false;
         file.showPopUp = false;
@@ -31,23 +36,10 @@ const FilePit = props => {
       });
       if (filesNew) setFiles([...filesNew]);
     }
-  }, [props.isNoneSelected]);
+  }, [isNoneSelected]);
 
   const addNewFile = () => {
-    props.toggleModalLocal(true, <CreateNewFile />);
-  };
-
-  const changeSelection = fileId => {
-    const filesNew = files.map(file => {
-      if (file.id === fileId) {
-        file.selected = true;
-      } else {
-        file.selected = false;
-      }
-      return file;
-    });
-    setFiles([...filesNew]);
-    props.markSomeSelected();
+    toggleModalLocal(true, <CreateNewFile />);
   };
 
   const setShowDropdown = fileId => {
@@ -60,18 +52,13 @@ const FilePit = props => {
       return file;
     });
     setFiles([...filesNew]);
-    props.markSomeSelected();
+    markSomeSelected();
   };
 
   return (
     <div className={'file-pit'}>
       {files?.map(file => (
-        <File
-          key={file.id}
-          {...file}
-          changeSelection={changeSelection}
-          setShowDropdown={setShowDropdown}
-        />
+        <File key={file.id} {...file} setShowDropdown={setShowDropdown} />
       ))}
       <div className={'file-container'}>
         <button onClick={addNewFile}>
@@ -82,10 +69,12 @@ const FilePit = props => {
   );
 };
 
-const mapStateToProps = state => ({
-  selectedFile: state.app.selected,
-  children: state.app.currentPath.children,
-});
+const mapStateToProps = state => {
+  return {
+    selectedFile: state.app.selected,
+    currentPath: state.app.currentPath,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   toggleModalLocal(state, content) {
