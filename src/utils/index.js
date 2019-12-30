@@ -111,3 +111,20 @@ export const deleteFileBasedOnId = (
   }
   return folderStructure;
 };
+
+export const findParentIdByPathName = (path, folderStructure) => {
+  const objectToReturn = {};
+  if (folderStructure.path === path) {
+    objectToReturn.parentID = folderStructure.parentID;
+    objectToReturn.parentPath = folderStructure.parentPath;
+  } else {
+    for (let i = 0; i < folderStructure.children?.length; ++i) {
+      const ObjectFound = findParentIdByPathName(
+        path,
+        folderStructure.children[i]
+      );
+      if (Object.keys(ObjectFound).length > 0) return ObjectFound;
+    }
+  }
+  return objectToReturn;
+};

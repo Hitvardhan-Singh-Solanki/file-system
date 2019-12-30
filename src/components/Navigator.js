@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import uuid from 'uuid/v4';
 import backIcon from './../assets/icons/back.png';
 import Search from './Search';
+import { findParentIdByPathName } from '../utils';
 
 const Navigator = props => {
   const setActivePath = path => {
@@ -25,7 +26,12 @@ const Navigator = props => {
       <div className="search-and-crumb">
         <img
           onClick={() => {
-            props.history.goBack();
+            const { parentID, parentPath } = findParentIdByPathName(
+              props.currentPath,
+              props.folderStructure
+            );
+            if (parentID && parentPath)
+              props.history.push(parentPath, { id: parentID });
           }}
           src={backIcon}
           alt="back"
@@ -46,6 +52,7 @@ const Navigator = props => {
 const mapStateToProps = state => {
   return {
     currentPath: state.app.currentPath.pathname,
+    folderStructure: state.app.folderStructure,
   };
 };
 
