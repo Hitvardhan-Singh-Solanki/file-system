@@ -21,7 +21,7 @@ const FolderTree = props => {
 };
 
 const mapStateToProps = state => ({
-  selected: state.app.selected,
+  children: state.app.currentPath.children,
   folderStructure: state.app.folderStructure,
 });
 
